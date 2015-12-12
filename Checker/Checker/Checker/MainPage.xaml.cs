@@ -22,31 +22,38 @@ namespace Checker
     /// </summary>
     public sealed partial class MainPage : Page
     {
-        private List<Checker> WhitePiece;
-        private List<Checker> BlackPiece;
+        private List<CheckerPiece> WhitePiece;
+        private List<CheckerPiece> BlackPiece;
         private int canvasXPos;
         private int canvasYPos;
-        private int x;
-        private int y; 
 
         public MainPage()
         {
             this.InitializeComponent();
             canvasXPos = 0;
             canvasYPos = 0;
-            x = 8;
-            y = 8;
-            WhitePiece = new List<Checker>();
-            BlackPiece = new List<Checker>();
+            WhitePiece = new List<CheckerPiece>();
+            BlackPiece = new List<CheckerPiece>();
+            
             CreateCheckerPiece();
         }
+
+        public void CheckMove(List<CheckerPiece> MovePiece)
+        {
+            
+
+
+
+        }
+
+
         public void CreateCheckerPiece()
         {
             //cannot get the size dynamicly so....
             canvasXPos = 340/8;
             canvasYPos = 640/8;
             //loop through a grid for the y position
-            for (int i =1; i<=8; i++)
+            for (int i = 1; i <= 8; i++)
             {
                 //loop through the gird for the x position
                 for (int w = 1; w <= 8; w++)
@@ -58,14 +65,14 @@ namespace Checker
                         {
                             if (w % 2 == 0)
                             {
-                                BlackPiece.Add(new Checker(i, w, canvasXPos * i, canvasYPos * w, false));
+                                BlackPiece.Add(new CheckerPiece(i, w, canvasXPos * i, canvasYPos * w, false));
                             }
                         }
                         else
                         {
                             if (w % 2 != 0)
                             {
-                                BlackPiece.Add(new Checker(i, w, canvasXPos * i, canvasYPos * w, false));
+                                BlackPiece.Add(new CheckerPiece(i, w, canvasXPos * i, canvasYPos * w, false));
                             }
                         }
                     }
@@ -75,24 +82,19 @@ namespace Checker
                         {
                             if (w % 2 == 0)
                             {
-                                WhitePiece.Add(new Checker(i, w, canvasXPos * i, canvasYPos * w, true));
+                                WhitePiece.Add(new CheckerPiece(i, w, canvasXPos * i, canvasYPos * w, true));
                             }
                         }
                         else
                         {
                             if (w % 2 != 0)
                             {
-                                WhitePiece.Add(new Checker(i, w, canvasXPos * i, canvasYPos * w, true));
+                                WhitePiece.Add(new CheckerPiece(i, w, canvasXPos * i, canvasYPos * w, true));
                             }
                         }
-                    }    
+                    }
                 }
             }
-
-            int will = 99;
-
-
-
         }
 
     }
