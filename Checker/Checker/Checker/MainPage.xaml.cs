@@ -60,7 +60,7 @@ namespace Checker
 
         public void KillPiece()
         {
-
+            //
         }
 
 
@@ -68,8 +68,8 @@ namespace Checker
         {
             //cannot get the size dynamicly so....
 
-            canvasYPos = (int)myCanvas.ActualWidth;
-            canvasXPos = (int)myCanvas.ActualHeight;
+            canvasXPos = (int)myCanvas.ActualWidth;
+            canvasYPos = (int)myCanvas.ActualHeight;
             //loop through a grid for the y position
             for (int i = 1; i <= 8; i++)
             {
