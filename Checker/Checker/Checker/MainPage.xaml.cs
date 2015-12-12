@@ -87,11 +87,9 @@ namespace Checker
                         }
                     }    
                 }
-               
             }
-            int wi = 0;
 
-
+            int will = 99;
 
 
 
