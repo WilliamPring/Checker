@@ -9,7 +9,9 @@
     </RootType>
     <RootType FullName="Windows.UI.Xaml.Controls.Canvas">
       <RootProperty Name="Background" />
+      <RootProperty Name="Margin" />
       <RootProperty Name="Resources" />
+      <RootEvent Name="Loaded" />
     </RootType>
     <RootType FullName="Checker.MainPage" />
   </Roots.RootTypes>

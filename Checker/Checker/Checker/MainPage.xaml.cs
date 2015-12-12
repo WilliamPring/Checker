@@ -35,14 +35,31 @@ namespace Checker
             WhitePiece = new List<CheckerPiece>();
             BlackPiece = new List<CheckerPiece>();
             
-            CreateCheckerPiece();
         }
 
-        public void CheckMove(List<CheckerPiece> MovePiece)
+        public void CheckMove(List<CheckerPiece> MovePiece, CheckerPiece CurrentPost, CheckerPiece DesirePost)
         {
-            
+            bool status;
+            //check to see if it on the bondary
+            if (CurrentPost.YPos - 1 == 0)
+            {
+                if (CurrentPost.YPos +1 == DesirePost.YPos)
+                {
+                    //do stuff in here because logic is done
+                }
+            }
+            else
+            {
+                //check the postion the two position a piece can move
+                if ((CurrentPost.XPos + 1 == DesirePost.XPos) && ((CurrentPost.YPos+2 == DesirePost.YPos) || (CurrentPost.YPos -1 == DesirePost.YPos)))
+                {
+                    //then check to see if pieces are there or not so interate thought the list if there a piece that can be killed then
+                }
+            }
+        }
 
-
+        public void KillPiece()
+        {
 
         }
 
@@ -50,8 +67,9 @@ namespace Checker
         public void CreateCheckerPiece()
         {
             //cannot get the size dynamicly so....
-            canvasXPos = 340/8;
-            canvasYPos = 640/8;
+
+            canvasYPos = (int)myCanvas.ActualWidth;
+            canvasXPos = (int)myCanvas.ActualHeight;
             //loop through a grid for the y position
             for (int i = 1; i <= 8; i++)
             {
@@ -97,5 +115,9 @@ namespace Checker
             }
         }
 
+        private void Loaded(object sender, RoutedEventArgs e)
+        {
+            CreateCheckerPiece();
+        }
     }
 }

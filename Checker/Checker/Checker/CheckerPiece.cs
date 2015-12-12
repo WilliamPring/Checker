@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Checker
 {
-    class CheckerPiece
+    public class CheckerPiece
     {
         //true reprsent white and false represent black
         private bool color;

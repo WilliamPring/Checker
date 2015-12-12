@@ -10,7 +10,7 @@
     <PackageArchitecture>x86</PackageArchitecture>
     <PackageIdentityName>d2e21348-edd9-47fa-a345-606146b1eb5f</PackageIdentityName>
     <IntermediateOutputPath>C:\Users\William\Desktop\Checker Repo\Checker\Checker\Checker\Checker\obj\x86\Debug\</IntermediateOutputPath>
-    <RegisteredManifestChecksum>4A400DDAB0770ECB6D578FAAE80F50F0C41519DDCFA4FFC7686374E820F09E1C</RegisteredManifestChecksum>
+    <RegisteredManifestChecksum>13C0E983FCEF36D6A4B3C0AE2144EEB4E16D20757FACE090BEAC13AE3A30D68C</RegisteredManifestChecksum>
     <RegisteredPackageMoniker>d2e21348-edd9-47fa-a345-606146b1eb5f_1.0.0.0_x86__pe4vsf0t72evj</RegisteredPackageMoniker>
     <RegisteredUserModeAppID>d2e21348-edd9-47fa-a345-606146b1eb5f_pe4vsf0t72evj!App</RegisteredUserModeAppID>
     <RegisteredPackageID>d2e21348-edd9-47fa-a345-606146b1eb5f</RegisteredPackageID>
@@ -22,13 +22,13 @@
     <AppXManifest Include="C:\Users\William\Desktop\Checker Repo\Checker\Checker\Checker\Checker\bin\x86\Debug\Core\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2015-12-12T19:21:13.438</Modified>
+      <Modified>2015-12-12T20:43:15.763</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
     <AppxPackagedFile Include="C:\Users\William\Desktop\Checker Repo\Checker\Checker\Checker\Checker\bin\x86\Debug\Checker.exe">
       <PackagePath>entrypoint\Checker.exe</PackagePath>
-      <Modified>2015-12-12T19:21:12.279</Modified>
+      <Modified>2015-12-12T20:42:14.373</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\William\.nuget\packages\Microsoft.ApplicationInsights\1.0.0\lib\portable-win81+wpa81\Microsoft.ApplicationInsights.dll">
       <PackagePath>Microsoft.ApplicationInsights.dll</PackagePath>
@@ -498,7 +498,7 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\William\Desktop\Checker Repo\Checker\Checker\Checker\Checker\bin\x86\Debug\Checker.xr.xml">
       <PackagePath>Checker.xr.xml</PackagePath>
-      <Modified>2015-12-12T18:23:50.055</Modified>
+      <Modified>2015-12-12T20:38:50.064</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Program Files %28x86%29\Windows Kits\10\UnionMetadata\Windows.winmd">
       <PackagePath>WinMetadata\Windows.winmd</PackagePath>
@@ -506,11 +506,11 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\William\Desktop\Checker Repo\Checker\Checker\Checker\Checker\bin\x86\Debug\resources.pri">
       <PackagePath>resources.pri</PackagePath>
-      <Modified>2015-12-12T19:21:13.206</Modified>
+      <Modified>2015-12-12T20:43:15.559</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\William\Desktop\Checker Repo\Checker\Checker\Checker\Checker\bin\x86\Debug\Core\Checker.exe">
       <PackagePath>Checker.exe</PackagePath>
-      <Modified>2015-12-12T19:21:13.433</Modified>
+      <Modified>2015-12-12T20:43:15.758</Modified>
     </AppxPackagedFile>
   </ItemGroup>
   <ItemGroup>
