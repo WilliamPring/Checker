@@ -94,6 +94,8 @@ namespace Checker
                     prevColumn = (int)currSquareSelected.GetValue(Grid.ColumnProperty); //Prev Column
                     prevRow = (int)currSquareSelected.GetValue(Grid.RowProperty); //Prev Row
 
+                    boardSquares[prevRow - 1, prevColumn].Background = new SolidColorBrush(Colors.Yellow);
+
                     //Get the colour of the piece
                     myPieceColor = (SolidColorBrush)currSquareSelected.Children.ElementAt(0).GetValue(Ellipse.FillProperty);
 
@@ -109,6 +111,8 @@ namespace Checker
                 }
                 else
                 {
+                    boardSquares[prevRow - 1, prevColumn].Background = new SolidColorBrush(Colors.Black);
+
                     isFirstClick = true; //Allow to select new coordinates to click on for movement
                     //Get the coordinates of the current selected part of the UI
                     desColumnn = (int)currSquareSelected.GetValue(Grid.ColumnProperty); //Current Column
@@ -144,7 +148,8 @@ namespace Checker
         bool CheckMove(bool color, int curX, int curY, int desX, int desY)
         {
             List<CheckerPiece> Piece = new List<CheckerPiece>();
-            bool status = false;
+            bool status = false; //Return to UI to see if move chosen was valid
+
             if (color == true)
             {
                 Piece = RedPiece;
@@ -153,32 +158,37 @@ namespace Checker
             {
                 Piece = OrgPiece;
             }
-            if ((curX == desX) && (curY == desY))
+
+            if ((curX == desX) && (curY == desY)) //If user clicked the same square, then obviously the move was incorrect
             {
                 status = false;
             }
             else
             {
-                if (status == false)
+                if(color == true) //Perform logic validation for the RED Piece 
                 {
-                    bool statusRed = moveOrgPiece(curX, curY, desX, desY);
-                    if (statusRed == true)
+                    int i = 0; 
+                }
+                else //Perform logic validation for the ORANGE piece
+                {
+                    bool statusOrange = moveOrgPiece(curX, curY, desX, desY); //Moves the orange piece, checks if move is valid
+
+                    if (statusOrange == true)
                     {
-                        status = true;
+                        status = true; //Move valid
                     }
                     else
                     {
                         status = false;
                     }
-                }
-                else
-                {
-
-                }
+                }             
             }
 
             return status;
         }
+
+
+
 
         public void createWall()
         {
@@ -217,13 +227,20 @@ namespace Checker
         }
 
 
+
+
+
+
+        //LOGIC FOR MOVING ORANGE PIECE 
+
+
         public bool moveOrgPiece(int curX, int curY, int desX, int desY)
         {
-            bool status = false;
+            bool status = false; //Returns if the move was valid or not
             bool RedPieceThere = false;
             bool OrgPieceThere = false;
 
-            //check the position of the pieces to see if it in the cordinate
+            //check the position of the pieces to see if its in the cordinate
             if ((curY - 1 == desY) && ((curX + 1 == desX) || (curX - 1 == desX)))
             {
                 //check to see if you piece is there or not
@@ -231,13 +248,14 @@ namespace Checker
                 {
                     if ((desX == CheckOrgPieces.XPos) && (desY == CheckOrgPieces.YPos))
                     {
-                        OrgPieceThere = true;
+                        OrgPieceThere = true; //Found an orange piece on the space user wants to go to
                         break;
                     }
                 }
+
                 if (OrgPieceThere == true)
                 {
-                    status = false;
+                    status = false; //Move was invalid because of the same piece being on the spot
                 }
                 else
                 {
@@ -253,7 +271,7 @@ namespace Checker
                     //if red piece is there that means you cannot move
                     if (RedPieceThere == true)
                     {
-                        status = false;
+                        status = false; //Move was invalid because of the another piece being on the spot
                     }
                     else
                     {
@@ -275,6 +293,9 @@ namespace Checker
                 }
 
             }
+
+
+
             //check for a kill
             if ((curY-2 == desY) && ((curX+2 == desX) || (curX - 2 == desX)))
             {
@@ -301,7 +322,14 @@ namespace Checker
                             OrgPieceThere = true;
                             break;
                         }
+
+                        if ((curY - 1 == CheckOrgPieces.YPos) && ((curX + 1 == CheckOrgPieces.XPos) || (curX - 1 == CheckOrgPieces.XPos)))
+                        {
+                            OrgPieceThere = true;
+                            break;
+                        }
                     }
+                
                     //change status
                     if (OrgPieceThere == true)
                     {
