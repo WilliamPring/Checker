@@ -37,7 +37,7 @@ namespace Checker
   
         private CheckerPiece myCheckerPiece;
         SolidColorBrush myPieceColor = new SolidColorBrush();
-
+        private List<CheckerPiece> WallYouCannotMove;
         private List<CheckerPiece> RedPiece;
         private List<CheckerPiece> OrgPiece;
 
@@ -52,14 +52,15 @@ namespace Checker
             prevColumn = 0;
             desRow = 0;
             desColumnn = 0;
-
+            WallYouCannotMove = new List<CheckerPiece>();
             RedPiece = new List<CheckerPiece>();
             OrgPiece = new List<CheckerPiece>();
         }
 
         private void Grid_Loaded(object sender, RoutedEventArgs e)
-        {  
-                
+        {
+            CreateCheckerPiece();
+            createWall();
         }
 
         private void Clicked(object sender, TappedRoutedEventArgs e)
@@ -179,6 +180,41 @@ namespace Checker
             return status;
         }
 
+        public void createWall()
+        {
+            for (int i = 1; i <= 8; i++)
+            {
+                for (int w =1; w <=8; w++)
+                {
+                    if ((w >= 1) && (i == 1))
+                    {
+                        WallYouCannotMove.Add(new CheckerPiece(i, w, false));
+                    }
+                    else if (i == 8)
+                    {
+                        WallYouCannotMove.Add(new CheckerPiece(i, w, false));
+                    }
+                    else if (i<=7)
+                    {
+                        if ((w == 1) || (w == 8))
+                        {
+                            WallYouCannotMove.Add(new CheckerPiece(i, w, false));
+                        }
+                    }
+
+
+                }
+            }
+        }
+
+
+        public bool CheckWall(int curX, int curY, int desX, int desY)
+        {
+            bool status = true;
+
+
+            return status; 
+        }
 
 
         public bool moveOrgPiece(int curX, int curY, int desX, int desY)
@@ -239,6 +275,46 @@ namespace Checker
                 }
 
             }
+            //check for a kill
+            if ((curY-2 == desY) && ((curX+2 == desX) || (curX - 2 == desX)))
+            {
+                //check oppnent pieces
+                foreach (CheckerPiece CheckRedPieces in RedPiece)
+                {
+                    if ((desX == CheckRedPieces.XPos) && (desY == CheckRedPieces.YPos))
+                    {
+                        RedPieceThere = true;
+                        break;
+                    }
+                }
+                if(RedPieceThere == true)
+                {
+                    status = false;
+                }
+                else
+                {
+                    //check your pieces if it interfear
+                    foreach (CheckerPiece CheckOrgPieces in OrgPiece)
+                    {
+                        if ((desX == CheckOrgPieces.XPos) && (desY == CheckOrgPieces.YPos))
+                        {
+                            OrgPieceThere = true;
+                            break;
+                        }
+                    }
+                    //change status
+                    if (OrgPieceThere == true)
+                    {
+                        status = false;
+                    }
+                    else
+                    {
+                        status = true;
+                    }
+                }
+
+            }
+
 
             return status;
         }
@@ -256,7 +332,7 @@ namespace Checker
                     //put a checker piece only if i is less then 3 because 3 represent the all the Black Piece
                     if (i <= 3)
                     {
-                        if (i % 2 == 0)
+                        if (i % 2 != 0)
                         {
                             if (w % 2 != 0)
                             {
@@ -276,14 +352,14 @@ namespace Checker
                     {
                         if (i % 2 == 0)
                         {
-                            if (w % 2 != 0)
+                            if (w % 2 == 0)
                             {
                                 OrgPiece.Add(new CheckerPiece(w, i, false));
                             }
                         }
                         else
                         {
-                            if (w % 2 == 0)
+                            if (w % 2 != 0)
                             {
                                 OrgPiece.Add(new CheckerPiece(w, i, false));
                             }

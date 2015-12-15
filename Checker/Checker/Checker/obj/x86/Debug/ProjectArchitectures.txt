@@ -1,1 +1,1 @@
-C:\Users\Naween-PC\Desktop\MyCheckers\Checker\Checker\Checker\Checker.csproj;x86
+C:\Users\William\Desktop\Test\MyCheckers(1)\MyCheckers\Checker\Checker\Checker\Checker.csproj;x86
