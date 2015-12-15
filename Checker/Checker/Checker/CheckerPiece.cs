@@ -58,7 +58,7 @@ namespace Checker
                 return yPos;
             }
         }
-
+           
 
 
         public SolidColorBrush CheckerColor
@@ -68,7 +68,7 @@ namespace Checker
                 return checkerColor;
             }
         }
-
+        
     }
 }
 
