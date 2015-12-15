@@ -585,3 +585,4 @@ C:\Users\Naween-PC\Desktop\MyCheckers\Checker\Checker\Checker\obj\x86\Debug\qual
 C:\Users\Naween-PC\Desktop\MyCheckers\Checker\Checker\Checker\obj\x86\Debug\qualifiers.txt.intermediate
 C:\Users\Naween-PC\Desktop\MyCheckers\Checker\Checker\Checker\obj\x86\Debug\MultipleQualifiersPerDimensionFound.txt
 C:\Users\Naween-PC\Desktop\MyCheckers\Checker\Checker\Checker\obj\x86\Debug\ProjectArchitectures.txt
+C:\Users\Naween-PC\Desktop\MyCheckers\Checker\Checker\Checker\obj\x86\Debug\Checker.csprojResolveAssemblyReference.cache

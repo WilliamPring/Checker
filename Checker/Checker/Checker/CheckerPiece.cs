@@ -16,42 +16,22 @@ namespace Checker
     {
         //true reprsent white and false represent black
         private bool colorStatus;
-
-        private double height;
-        private double width;  
-
         private int xPos;
         private int yPos;
-
-        private int CanvasPostY;
-        private int CanvasPostX;
-
         private SolidColorBrush checkerColor; 
 
-        /** Contstructor **/
+        /* Contstructor */
 
-        public CheckerPiece(int xPos, int yPos, int CanvasPostY, int CanvasPostX, bool colorStatus, double height, double width)
+        public CheckerPiece(int xPos, int yPos, bool colorStatus)
         {
             //Positions
-            this.xPos = CanvasPostX;
-            this.yPos = CanvasPostY;
-            this.CanvasPostX = CanvasPostX;
-            this.CanvasPostY = CanvasPostY;
+            this.xPos = xPos;
+            this.yPos = yPos;
 
             //Image related data members
             this.colorStatus = colorStatus;
-            this.height = height;
-            this.width  = width;
 
-            //Establish the color of the checker piece
-            if(colorStatus == true) //Represents color Red
-            {
-                checkerColor = new SolidColorBrush(Colors.Red); 
-            }
-            else //Represents color Green
-            {
-                checkerColor = new SolidColorBrush(Colors.Green);
-            }
+
         }
 
         //Default
@@ -61,7 +41,7 @@ namespace Checker
         }
 
 
-        /** Properties **/
+        /* Properties */
 
         public int XPos
         {
@@ -78,22 +58,8 @@ namespace Checker
                 return yPos;
             }
         }
-           
-        public double Height
-        {
-            get
-            {
-                return height; 
-            }
-        }
 
-        public double Width
-        {
-            get
-            {
-                return width; 
-            }
-        }
+
 
         public SolidColorBrush CheckerColor
         {
@@ -102,6 +68,7 @@ namespace Checker
                 return checkerColor;
             }
         }
-        
+
     }
 }
+
