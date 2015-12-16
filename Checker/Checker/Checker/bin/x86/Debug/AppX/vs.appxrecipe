@@ -22,13 +22,13 @@
     <AppXManifest Include="C:\Users\William\AppData\Roaming\Skype\My Skype Received Files\MyCheckers\MyCheckers\Checker\Checker\Checker\bin\x86\Debug\Core\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2015-12-16T02:44:51.561</Modified>
+      <Modified>2015-12-16T04:00:10.031</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
     <AppxPackagedFile Include="C:\Users\William\AppData\Roaming\Skype\My Skype Received Files\MyCheckers\MyCheckers\Checker\Checker\Checker\bin\x86\Debug\Checker.exe">
       <PackagePath>entrypoint\Checker.exe</PackagePath>
-      <Modified>2015-12-16T02:44:51.306</Modified>
+      <Modified>2015-12-16T04:00:09.789</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\William\.nuget\packages\Microsoft.ApplicationInsights\1.0.0\lib\portable-win81+wpa81\Microsoft.ApplicationInsights.dll">
       <PackagePath>Microsoft.ApplicationInsights.dll</PackagePath>
@@ -510,7 +510,7 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\William\AppData\Roaming\Skype\My Skype Received Files\MyCheckers\MyCheckers\Checker\Checker\Checker\bin\x86\Debug\Core\Checker.exe">
       <PackagePath>Checker.exe</PackagePath>
-      <Modified>2015-12-16T02:44:51.559</Modified>
+      <Modified>2015-12-16T04:00:10.028</Modified>
     </AppxPackagedFile>
   </ItemGroup>
   <ItemGroup>
