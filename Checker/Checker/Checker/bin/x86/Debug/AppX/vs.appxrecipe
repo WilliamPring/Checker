@@ -9,7 +9,7 @@
     <SolutionConfiguration>Debug|x86</SolutionConfiguration>
     <PackageArchitecture>x86</PackageArchitecture>
     <PackageIdentityName>d2e21348-edd9-47fa-a345-606146b1eb5f</PackageIdentityName>
-    <IntermediateOutputPath>C:\Users\William\Desktop\Test\MyCheckers%281%29\MyCheckers\Checker\Checker\Checker\obj\x86\Debug\</IntermediateOutputPath>
+    <IntermediateOutputPath>C:\Users\William\AppData\Roaming\Skype\My Skype Received Files\MyCheckers\MyCheckers\Checker\Checker\Checker\obj\x86\Debug\</IntermediateOutputPath>
     <RegisteredManifestChecksum>9C4FBEFCBC714422229F9197B2956EA0127B87D4062CD9FD45C3CC94C95615F3</RegisteredManifestChecksum>
     <RegisteredPackageMoniker>d2e21348-edd9-47fa-a345-606146b1eb5f_1.0.0.0_x86__pe4vsf0t72evj</RegisteredPackageMoniker>
     <RegisteredUserModeAppID>d2e21348-edd9-47fa-a345-606146b1eb5f_pe4vsf0t72evj!App</RegisteredUserModeAppID>
@@ -19,16 +19,16 @@
     <JitOptimizationSuppressed>True</JitOptimizationSuppressed>
   </PropertyGroup>
   <ItemGroup>
-    <AppXManifest Include="C:\Users\William\Desktop\Test\MyCheckers%281%29\MyCheckers\Checker\Checker\Checker\bin\x86\Debug\Core\AppxManifest.xml">
+    <AppXManifest Include="C:\Users\William\AppData\Roaming\Skype\My Skype Received Files\MyCheckers\MyCheckers\Checker\Checker\Checker\bin\x86\Debug\Core\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2015-12-15T02:34:36.995</Modified>
+      <Modified>2015-12-16T02:44:51.561</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
-    <AppxPackagedFile Include="C:\Users\William\Desktop\Test\MyCheckers%281%29\MyCheckers\Checker\Checker\Checker\bin\x86\Debug\Checker.exe">
+    <AppxPackagedFile Include="C:\Users\William\AppData\Roaming\Skype\My Skype Received Files\MyCheckers\MyCheckers\Checker\Checker\Checker\bin\x86\Debug\Checker.exe">
       <PackagePath>entrypoint\Checker.exe</PackagePath>
-      <Modified>2015-12-15T02:34:36.738</Modified>
+      <Modified>2015-12-16T02:44:51.306</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\William\.nuget\packages\Microsoft.ApplicationInsights\1.0.0\lib\portable-win81+wpa81\Microsoft.ApplicationInsights.dll">
       <PackagePath>Microsoft.ApplicationInsights.dll</PackagePath>
@@ -454,63 +454,63 @@
       <PackagePath>System.Xml.XmlSerializer.dll</PackagePath>
       <Modified>2015-12-08T19:31:16.934</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\William\Desktop\Test\MyCheckers%281%29\MyCheckers\Checker\Checker\Checker\ApplicationInsights.config">
+    <AppxPackagedFile Include="C:\Users\William\AppData\Roaming\Skype\My Skype Received Files\MyCheckers\MyCheckers\Checker\Checker\Checker\ApplicationInsights.config">
       <PackagePath>ApplicationInsights.config</PackagePath>
-      <Modified>2015-12-15T00:55:18.924</Modified>
+      <Modified>2015-12-16T01:53:01.005</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\William\Desktop\Test\MyCheckers%281%29\MyCheckers\Checker\Checker\Checker\Properties\Default.rd.xml">
+    <AppxPackagedFile Include="C:\Users\William\AppData\Roaming\Skype\My Skype Received Files\MyCheckers\MyCheckers\Checker\Checker\Checker\Properties\Default.rd.xml">
       <PackagePath>Properties\Default.rd.xml</PackagePath>
-      <Modified>2015-12-15T00:55:29.137</Modified>
+      <Modified>2015-12-16T01:53:12.667</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\William\Desktop\Test\MyCheckers%281%29\MyCheckers\Checker\Checker\Checker\Assets\LockScreenLogo.scale-200.png">
+    <AppxPackagedFile Include="C:\Users\William\AppData\Roaming\Skype\My Skype Received Files\MyCheckers\MyCheckers\Checker\Checker\Checker\Assets\LockScreenLogo.scale-200.png">
       <PackagePath>Assets\LockScreenLogo.scale-200.png</PackagePath>
-      <Modified>2015-12-15T00:55:19.075</Modified>
+      <Modified>2015-12-16T01:53:01.183</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\William\Desktop\Test\MyCheckers%281%29\MyCheckers\Checker\Checker\Checker\Assets\SplashScreen.scale-200.png">
+    <AppxPackagedFile Include="C:\Users\William\AppData\Roaming\Skype\My Skype Received Files\MyCheckers\MyCheckers\Checker\Checker\Checker\Assets\SplashScreen.scale-200.png">
       <PackagePath>Assets\SplashScreen.scale-200.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2015-12-15T00:55:19.085</Modified>
+      <Modified>2015-12-16T01:53:01.195</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\William\Desktop\Test\MyCheckers%281%29\MyCheckers\Checker\Checker\Checker\Assets\Square150x150Logo.scale-200.png">
+    <AppxPackagedFile Include="C:\Users\William\AppData\Roaming\Skype\My Skype Received Files\MyCheckers\MyCheckers\Checker\Checker\Checker\Assets\Square150x150Logo.scale-200.png">
       <PackagePath>Assets\Square150x150Logo.scale-200.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2015-12-15T00:55:19.095</Modified>
+      <Modified>2015-12-16T01:53:01.205</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\William\Desktop\Test\MyCheckers%281%29\MyCheckers\Checker\Checker\Checker\Assets\Square44x44Logo.scale-200.png">
+    <AppxPackagedFile Include="C:\Users\William\AppData\Roaming\Skype\My Skype Received Files\MyCheckers\MyCheckers\Checker\Checker\Checker\Assets\Square44x44Logo.scale-200.png">
       <PackagePath>Assets\Square44x44Logo.scale-200.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2015-12-15T00:55:19.104</Modified>
+      <Modified>2015-12-16T01:53:01.216</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\William\Desktop\Test\MyCheckers%281%29\MyCheckers\Checker\Checker\Checker\Assets\Square44x44Logo.targetsize-24_altform-unplated.png">
+    <AppxPackagedFile Include="C:\Users\William\AppData\Roaming\Skype\My Skype Received Files\MyCheckers\MyCheckers\Checker\Checker\Checker\Assets\Square44x44Logo.targetsize-24_altform-unplated.png">
       <PackagePath>Assets\Square44x44Logo.targetsize-24_altform-unplated.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2015-12-15T00:55:19.114</Modified>
+      <Modified>2015-12-16T01:53:01.227</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\William\Desktop\Test\MyCheckers%281%29\MyCheckers\Checker\Checker\Checker\Assets\StoreLogo.png">
+    <AppxPackagedFile Include="C:\Users\William\AppData\Roaming\Skype\My Skype Received Files\MyCheckers\MyCheckers\Checker\Checker\Checker\Assets\StoreLogo.png">
       <PackagePath>Assets\StoreLogo.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2015-12-15T00:55:19.124</Modified>
+      <Modified>2015-12-16T01:53:01.237</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\William\Desktop\Test\MyCheckers%281%29\MyCheckers\Checker\Checker\Checker\Assets\Wide310x150Logo.scale-200.png">
+    <AppxPackagedFile Include="C:\Users\William\AppData\Roaming\Skype\My Skype Received Files\MyCheckers\MyCheckers\Checker\Checker\Checker\Assets\Wide310x150Logo.scale-200.png">
       <PackagePath>Assets\Wide310x150Logo.scale-200.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2015-12-15T00:55:19.134</Modified>
+      <Modified>2015-12-16T01:53:01.248</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\William\Desktop\Test\MyCheckers%281%29\MyCheckers\Checker\Checker\Checker\bin\x86\Debug\Checker.xr.xml">
+    <AppxPackagedFile Include="C:\Users\William\AppData\Roaming\Skype\My Skype Received Files\MyCheckers\MyCheckers\Checker\Checker\Checker\bin\x86\Debug\Checker.xr.xml">
       <PackagePath>Checker.xr.xml</PackagePath>
-      <Modified>2015-12-15T00:55:27.884</Modified>
+      <Modified>2015-12-16T01:53:11.191</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Program Files %28x86%29\Windows Kits\10\UnionMetadata\Windows.winmd">
       <PackagePath>WinMetadata\Windows.winmd</PackagePath>
       <Modified>2015-12-09T01:31:42.142</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\William\Desktop\Test\MyCheckers%281%29\MyCheckers\Checker\Checker\Checker\bin\x86\Debug\resources.pri">
+    <AppxPackagedFile Include="C:\Users\William\AppData\Roaming\Skype\My Skype Received Files\MyCheckers\MyCheckers\Checker\Checker\Checker\bin\x86\Debug\resources.pri">
       <PackagePath>resources.pri</PackagePath>
-      <Modified>2015-12-15T00:59:39.445</Modified>
+      <Modified>2015-12-16T02:25:03.058</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\William\Desktop\Test\MyCheckers%281%29\MyCheckers\Checker\Checker\Checker\bin\x86\Debug\Core\Checker.exe">
+    <AppxPackagedFile Include="C:\Users\William\AppData\Roaming\Skype\My Skype Received Files\MyCheckers\MyCheckers\Checker\Checker\Checker\bin\x86\Debug\Core\Checker.exe">
       <PackagePath>Checker.exe</PackagePath>
-      <Modified>2015-12-15T02:34:36.993</Modified>
+      <Modified>2015-12-16T02:44:51.559</Modified>
     </AppxPackagedFile>
   </ItemGroup>
   <ItemGroup>

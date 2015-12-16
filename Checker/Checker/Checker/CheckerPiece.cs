@@ -18,16 +18,16 @@ namespace Checker
         private bool colorStatus;
         private int xPos;
         private int yPos;
-        private SolidColorBrush checkerColor; 
-
+        private SolidColorBrush checkerColor;
+        bool isKing;
         /* Contstructor */
 
-        public CheckerPiece(int xPos, int yPos, bool colorStatus)
+        public CheckerPiece(int xPos, int yPos, bool colorStatus, bool isKing)
         {
             //Positions
             this.xPos = xPos;
             this.yPos = yPos;
-
+            this.isKing = isKing;
             //Image related data members
             this.colorStatus = colorStatus;
 
