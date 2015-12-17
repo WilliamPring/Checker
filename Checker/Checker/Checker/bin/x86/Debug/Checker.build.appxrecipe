@@ -9,16 +9,16 @@
     <SolutionConfiguration>Debug|x86</SolutionConfiguration>
     <PackageArchitecture>x86</PackageArchitecture>
     <PackageIdentityName>d2e21348-edd9-47fa-a345-606146b1eb5f</PackageIdentityName>
-    <IntermediateOutputPath>C:\Users\William\Desktop\Test\MyCheckers%281%29\MyCheckers\Checker\Checker\Checker\obj\x86\Debug\</IntermediateOutputPath>
+    <IntermediateOutputPath>C:\Users\William\AppData\Roaming\Skype\My Skype Received Files\SafeCopyCheckersGame\GitCheckers\Checker\Checker\Checker\obj\x86\Debug\</IntermediateOutputPath>
   </PropertyGroup>
   <ItemGroup>
-    <AppXManifest Include="C:\Users\William\Desktop\Test\MyCheckers%281%29\MyCheckers\Checker\Checker\Checker\bin\x86\Debug\Core\AppxManifest.xml">
+    <AppXManifest Include="C:\Users\William\AppData\Roaming\Skype\My Skype Received Files\SafeCopyCheckersGame\GitCheckers\Checker\Checker\Checker\bin\x86\Debug\Core\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
-    <AppxPackagedFile Include="C:\Users\William\Desktop\Test\MyCheckers%281%29\MyCheckers\Checker\Checker\Checker\bin\x86\Debug\Checker.exe">
+    <AppxPackagedFile Include="C:\Users\William\AppData\Roaming\Skype\My Skype Received Files\SafeCopyCheckersGame\GitCheckers\Checker\Checker\Checker\bin\x86\Debug\Checker.exe">
       <PackagePath>entrypoint\Checker.exe</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\William\.nuget\packages\Microsoft.ApplicationInsights\1.0.0\lib\portable-win81+wpa81\Microsoft.ApplicationInsights.dll">
@@ -339,49 +339,49 @@
     <AppxPackagedFile Include="C:\Users\William\.nuget\packages\System.Xml.XmlSerializer\4.0.10\lib\netcore50\System.Xml.XmlSerializer.dll">
       <PackagePath>System.Xml.XmlSerializer.dll</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\William\Desktop\Test\MyCheckers%281%29\MyCheckers\Checker\Checker\Checker\ApplicationInsights.config">
+    <AppxPackagedFile Include="C:\Users\William\AppData\Roaming\Skype\My Skype Received Files\SafeCopyCheckersGame\GitCheckers\Checker\Checker\Checker\ApplicationInsights.config">
       <PackagePath>ApplicationInsights.config</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\William\Desktop\Test\MyCheckers%281%29\MyCheckers\Checker\Checker\Checker\Properties\Default.rd.xml">
+    <AppxPackagedFile Include="C:\Users\William\AppData\Roaming\Skype\My Skype Received Files\SafeCopyCheckersGame\GitCheckers\Checker\Checker\Checker\Properties\Default.rd.xml">
       <PackagePath>Properties\Default.rd.xml</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\William\Desktop\Test\MyCheckers%281%29\MyCheckers\Checker\Checker\Checker\Assets\LockScreenLogo.scale-200.png">
+    <AppxPackagedFile Include="C:\Users\William\AppData\Roaming\Skype\My Skype Received Files\SafeCopyCheckersGame\GitCheckers\Checker\Checker\Checker\Assets\LockScreenLogo.scale-200.png">
       <PackagePath>Assets\LockScreenLogo.scale-200.png</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\William\Desktop\Test\MyCheckers%281%29\MyCheckers\Checker\Checker\Checker\Assets\SplashScreen.scale-200.png">
+    <AppxPackagedFile Include="C:\Users\William\AppData\Roaming\Skype\My Skype Received Files\SafeCopyCheckersGame\GitCheckers\Checker\Checker\Checker\Assets\SplashScreen.scale-200.png">
       <PackagePath>Assets\SplashScreen.scale-200.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\William\Desktop\Test\MyCheckers%281%29\MyCheckers\Checker\Checker\Checker\Assets\Square150x150Logo.scale-200.png">
+    <AppxPackagedFile Include="C:\Users\William\AppData\Roaming\Skype\My Skype Received Files\SafeCopyCheckersGame\GitCheckers\Checker\Checker\Checker\Assets\Square150x150Logo.scale-200.png">
       <PackagePath>Assets\Square150x150Logo.scale-200.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\William\Desktop\Test\MyCheckers%281%29\MyCheckers\Checker\Checker\Checker\Assets\Square44x44Logo.scale-200.png">
+    <AppxPackagedFile Include="C:\Users\William\AppData\Roaming\Skype\My Skype Received Files\SafeCopyCheckersGame\GitCheckers\Checker\Checker\Checker\Assets\Square44x44Logo.scale-200.png">
       <PackagePath>Assets\Square44x44Logo.scale-200.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\William\Desktop\Test\MyCheckers%281%29\MyCheckers\Checker\Checker\Checker\Assets\Square44x44Logo.targetsize-24_altform-unplated.png">
+    <AppxPackagedFile Include="C:\Users\William\AppData\Roaming\Skype\My Skype Received Files\SafeCopyCheckersGame\GitCheckers\Checker\Checker\Checker\Assets\Square44x44Logo.targetsize-24_altform-unplated.png">
       <PackagePath>Assets\Square44x44Logo.targetsize-24_altform-unplated.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\William\Desktop\Test\MyCheckers%281%29\MyCheckers\Checker\Checker\Checker\Assets\StoreLogo.png">
+    <AppxPackagedFile Include="C:\Users\William\AppData\Roaming\Skype\My Skype Received Files\SafeCopyCheckersGame\GitCheckers\Checker\Checker\Checker\Assets\StoreLogo.png">
       <PackagePath>Assets\StoreLogo.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\William\Desktop\Test\MyCheckers%281%29\MyCheckers\Checker\Checker\Checker\Assets\Wide310x150Logo.scale-200.png">
+    <AppxPackagedFile Include="C:\Users\William\AppData\Roaming\Skype\My Skype Received Files\SafeCopyCheckersGame\GitCheckers\Checker\Checker\Checker\Assets\Wide310x150Logo.scale-200.png">
       <PackagePath>Assets\Wide310x150Logo.scale-200.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\William\Desktop\Test\MyCheckers%281%29\MyCheckers\Checker\Checker\Checker\bin\x86\Debug\Checker.xr.xml">
+    <AppxPackagedFile Include="C:\Users\William\AppData\Roaming\Skype\My Skype Received Files\SafeCopyCheckersGame\GitCheckers\Checker\Checker\Checker\bin\x86\Debug\Checker.xr.xml">
       <PackagePath>Checker.xr.xml</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Program Files %28x86%29\Windows Kits\10\UnionMetadata\Windows.winmd">
       <PackagePath>WinMetadata\Windows.winmd</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\William\Desktop\Test\MyCheckers%281%29\MyCheckers\Checker\Checker\Checker\bin\x86\Debug\resources.pri">
+    <AppxPackagedFile Include="C:\Users\William\AppData\Roaming\Skype\My Skype Received Files\SafeCopyCheckersGame\GitCheckers\Checker\Checker\Checker\bin\x86\Debug\resources.pri">
       <PackagePath>resources.pri</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\William\Desktop\Test\MyCheckers%281%29\MyCheckers\Checker\Checker\Checker\bin\x86\Debug\Core\Checker.exe">
+    <AppxPackagedFile Include="C:\Users\William\AppData\Roaming\Skype\My Skype Received Files\SafeCopyCheckersGame\GitCheckers\Checker\Checker\Checker\bin\x86\Debug\Core\Checker.exe">
       <PackagePath>Checker.exe</PackagePath>
     </AppxPackagedFile>
   </ItemGroup>

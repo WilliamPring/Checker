@@ -1,1 +1,1 @@
-C:\Users\William\Desktop\Test\MyCheckers(1)\MyCheckers\Checker\Checker\Checker\Checker.csproj;x86
+C:\Users\William\AppData\Roaming\Skype\My Skype Received Files\SafeCopyCheckersGame\GitCheckers\Checker\Checker\Checker\Checker.csproj;x86

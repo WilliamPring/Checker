@@ -37,7 +37,11 @@ namespace Checker
         private bool isFirstClick; 
   
         private CheckerPiece myCheckerPiece;
-        SolidColorBrush myPieceColor = new SolidColorBrush();
+
+
+        private SolidColorBrush myPieceColor = new SolidColorBrush();
+        private SolidColorBrush myBorderColor = new SolidColorBrush(); 
+
         private List<CheckerPiece> WallYouCannotMove;
         private List<CheckerPiece> RedPiece;
         private List<CheckerPiece> OrgPiece;
@@ -105,8 +109,6 @@ namespace Checker
         {
             bool moveAcceptable = false;
 
-            SolidColorBrush checkKingBrush = new SolidColorBrush();
-
             Canvas currSquareSelected = sender as Canvas;       
             
             try
@@ -118,19 +120,23 @@ namespace Checker
                     prevColumn = (int)currSquareSelected.GetValue(Grid.ColumnProperty); //Prev Column
                     prevRow = (int)currSquareSelected.GetValue(Grid.RowProperty); //Prev Row
 
+                    //Piece that was selected
+               
+                    //myPieceColor = (SolidColorBrush)currSquareSelected.Children.ElementAt(0).GetValue(Ellipse.StrokeProperty);
+                    
                     boardSquares[prevRow - 1, prevColumn].Background = new SolidColorBrush(Colors.Yellow);
 
                     //Get the colour of the piece
                     myPieceColor = (SolidColorBrush)currSquareSelected.Children.ElementAt(0).GetValue(Ellipse.FillProperty);
 
                     //Check if the brush resembles king
-                    checkKingBrush = (SolidColorBrush)currSquareSelected.Children.ElementAt(0).GetValue(Ellipse.StrokeProperty);
+                    myBorderColor = (SolidColorBrush)currSquareSelected.Children.ElementAt(0).GetValue(Ellipse.StrokeProperty);
 
                     if (myPieceColor.Color == Colors.Red)
                     {
                         colorOfPiece = true; //COLOR OF PIECE IS RED
 
-                        if(checkKingBrush.Color == Colors.White || checkKingBrush.Color != null)
+                        if(myBorderColor.Color == Colors.White)
                         {
                             moveKing = true; 
                         }
@@ -144,7 +150,7 @@ namespace Checker
                     {
                         colorOfPiece = false; //COLOR OF PIECE IS ORANGE
 
-                        if(checkKingBrush.Color == Colors.White || checkKingBrush.Color != null)
+                        if(myBorderColor.Color == Colors.White)
                         {
                             moveKing = true; 
                         }
@@ -168,16 +174,17 @@ namespace Checker
                                         
                     if(moveAcceptable) //Returns true, change checker position on board
                     {
-                        MoveCheckerPiece(); //Move the checker piece 
-
-                        //Turn reg piece into king if landed on the other side
-
-                        SolidColorBrush stColor = new SolidColorBrush();
-                        //stColor = (SolidColorBrush)boardSquares[desRow - 1, desColumnn].Children.ElementAt(0).GetValue(Ellipse.StrokeProperty);
-
-                        if (stColor.Color != Colors.Yellow) //Check if there is a border color of yellow
+                        if (myBorderColor.Color == Colors.White) //Check if there is a border color of white (meaining king piece)
                         {
-                            if(myPieceColor.Color == Colors.Orange) //Change into dark orange if required
+                            MoveCheckerPiece(true); //Move the KING checker piece
+                        }
+                        else
+                        {
+                            //No stroke present, thus error, so imply that it's a regulat checker piece 
+
+                            MoveCheckerPiece(false); //Move the REGULAR checker piece 
+
+                            if (myPieceColor.Color == Colors.Orange) //Change into dark orange if required
                             {
                                 CheckIfKing(false);
                             }
@@ -209,7 +216,7 @@ namespace Checker
                     myPieceColor = new SolidColorBrush(Colors.Red); 
                     boardSquares[desRow - 1, desColumnn].Children.ElementAt(0).SetValue(Ellipse.FillProperty, myPieceColor);
                     boardSquares[desRow - 1, desColumnn].Children.ElementAt(0).SetValue(Ellipse.StrokeProperty, new SolidColorBrush(Colors.White)); //Border color of yellow
-                    boardSquares[desRow - 1, desColumnn].Children.ElementAt(0).SetValue(Ellipse.StrokeThicknessProperty, 3); //Border color of yellow
+                    //boardSquares[desRow - 1, desColumnn].Children.ElementAt(0).SetValue(Ellipse.StrokeThicknessProperty, 3); //Border color of yellow
                     kingStatus = true; 
                 }
             }
@@ -220,7 +227,7 @@ namespace Checker
                     myPieceColor = new SolidColorBrush(Colors.Orange);
                     boardSquares[desRow - 1, desColumnn].Children.ElementAt(0).SetValue(Ellipse.FillProperty, myPieceColor);
                     boardSquares[desRow - 1, desColumnn].Children.ElementAt(0).SetValue(Ellipse.StrokeProperty, new SolidColorBrush(Colors.White)); //Border color of yellow
-                    boardSquares[desRow - 1, desColumnn].Children.ElementAt(0).SetValue(Ellipse.StrokeThicknessProperty, 3); //Border color of yellow
+                    //boardSquares[desRow - 1, desColumnn].Children.ElementAt(0).SetValue(Ellipse.StrokeThicknessProperty, 3); //Border color of yellow
                     kingStatus = true; 
                 }
             }
@@ -230,7 +237,7 @@ namespace Checker
 
 
 
-        private void MoveCheckerPiece()
+        private void MoveCheckerPiece(bool isChangeStrokeColor)
         {
 
             //Clear square if jump was done move was performed
@@ -245,6 +252,17 @@ namespace Checker
 
                 boardSquares[desRow - 1, desColumnn].Children.ElementAt(0).SetValue(Ellipse.FillProperty, myPieceColor);
                 boardSquares[desRow - 1, desColumnn].Children.ElementAt(0).SetValue(Ellipse.OpacityProperty, 100);
+                boardSquares[desRow - 1, desColumnn].Children.ElementAt(0).SetValue(Ellipse.StrokeProperty, myPieceColor); //Stroke Color
+
+
+                if (isChangeStrokeColor)
+                {
+                    boardSquares[desRow - 1, desColumnn].Children.ElementAt(0).SetValue(Ellipse.StrokeProperty, new SolidColorBrush(Colors.White)); //Border color of yellow
+                    //boardSquares[desRow - 1, desColumnn].Children.ElementAt(0).SetValue(Ellipse.StrokeThicknessProperty, 3); //Border color of yellow
+                    boardSquares[desRow - 1, desColumnn].Children.ElementAt(0).SetValue(Ellipse.StrokeProperty, myBorderColor); //Stroke Color
+
+                }
+
             }
             else if (prevRow - 2 == desRow && prevColumn - 2 == desColumnn)
             {
@@ -254,17 +272,35 @@ namespace Checker
 
                 boardSquares[desRow - 1, desColumnn].Children.ElementAt(0).SetValue(Ellipse.FillProperty, myPieceColor);
                 boardSquares[desRow - 1, desColumnn].Children.ElementAt(0).SetValue(Ellipse.OpacityProperty, 100);
+                boardSquares[desRow - 1, desColumnn].Children.ElementAt(0).SetValue(Ellipse.StrokeProperty, myPieceColor); //Stroke Color
+
+
+                if (isChangeStrokeColor)
+                {
+                    boardSquares[desRow - 1, desColumnn].Children.ElementAt(0).SetValue(Ellipse.StrokeProperty, new SolidColorBrush(Colors.White)); //Border color of yellow
+                    //boardSquares[desRow - 1, desColumnn].Children.ElementAt(0).SetValue(Ellipse.StrokeThicknessProperty, 3); //Border color of yellow
+                    boardSquares[desRow - 1, desColumnn].Children.ElementAt(0).SetValue(Ellipse.StrokeProperty, myBorderColor); //Stroke Color
+
+                }
             }
             else if (prevRow + 2 == desRow && prevColumn - 2 == desColumnn)
             {
                 boardSquares[prevRow - 1, prevColumn].Children.ElementAt(0).SetValue(Ellipse.OpacityProperty, 0);
                 boardSquares[prevRow, prevColumn - 1].Children.ElementAt(0).SetValue(Ellipse.OpacityProperty, 0);
-                //boardSquares[prevRow, prevColumn - 1].Background = new SolidColorBrush(Colors.Purple); 
-
-
+                //boardSquares[prevRow, prevColumn - 1].Background = new SolidColorBrush(Colors.Purple);
 
                 boardSquares[desRow - 1, desColumnn].Children.ElementAt(0).SetValue(Ellipse.FillProperty, myPieceColor);
                 boardSquares[desRow - 1, desColumnn].Children.ElementAt(0).SetValue(Ellipse.OpacityProperty, 100);
+                boardSquares[desRow - 1, desColumnn].Children.ElementAt(0).SetValue(Ellipse.StrokeProperty, myPieceColor); //Stroke Color
+
+
+                if (isChangeStrokeColor)
+                {
+                    boardSquares[desRow - 1, desColumnn].Children.ElementAt(0).SetValue(Ellipse.StrokeProperty, new SolidColorBrush(Colors.White)); //Border color of yellow
+                    //boardSquares[desRow - 1, desColumnn].Children.ElementAt(0).SetValue(Ellipse.StrokeThicknessProperty, 3); //Border color of yellow
+                    boardSquares[desRow - 1, desColumnn].Children.ElementAt(0).SetValue(Ellipse.StrokeProperty, myBorderColor); //Stroke Color
+
+                }
             }
             else if (prevRow + 2 == desRow && prevColumn + 2 == desColumnn)
             {
@@ -274,6 +310,16 @@ namespace Checker
 
                 boardSquares[desRow - 1, desColumnn].Children.ElementAt(0).SetValue(Ellipse.FillProperty, myPieceColor);
                 boardSquares[desRow - 1, desColumnn].Children.ElementAt(0).SetValue(Ellipse.OpacityProperty, 100);
+                boardSquares[desRow - 1, desColumnn].Children.ElementAt(0).SetValue(Ellipse.StrokeProperty, myPieceColor); //Stroke Color
+
+
+                if (isChangeStrokeColor)
+                {
+                    boardSquares[desRow - 1, desColumnn].Children.ElementAt(0).SetValue(Ellipse.StrokeProperty, new SolidColorBrush(Colors.White)); //Border color of yellow
+                    //boardSquares[desRow - 1, desColumnn].Children.ElementAt(0).SetValue(Ellipse.StrokeThicknessProperty, 3); //Border color of yellow
+                    boardSquares[desRow - 1, desColumnn].Children.ElementAt(0).SetValue(Ellipse.StrokeProperty, myBorderColor); //Stroke Color
+
+                }
             }
             else
             {
@@ -281,38 +327,35 @@ namespace Checker
 
                 boardSquares[desRow - 1, desColumnn].Children.ElementAt(0).SetValue(Ellipse.FillProperty, myPieceColor);
                 boardSquares[desRow - 1, desColumnn].Children.ElementAt(0).SetValue(Ellipse.OpacityProperty, 100);
+                boardSquares[desRow - 1, desColumnn].Children.ElementAt(0).SetValue(Ellipse.StrokeProperty, myPieceColor); //Stroke Color
 
+
+                if (isChangeStrokeColor)
+                {
+                    boardSquares[desRow - 1, desColumnn].Children.ElementAt(0).SetValue(Ellipse.StrokeProperty, new SolidColorBrush(Colors.White)); //Border color of yellow
+                    boardSquares[desRow - 1, desColumnn].Children.ElementAt(0).SetValue(Ellipse.StrokeProperty, myBorderColor); //Stroke Color
+
+                }
             }
         }
 
         public bool moveOrgKing(int curX, int curY, int desX, int desY)
         {
-            bool status = true;
-
-
-            return status;
-        }
-
-
-
-
-        public bool moveRedKing(int curX, int curY, int desX, int desY)
-        {
-            bool RedPieceThere = true;
+            bool RedPieceThere = false;
+            bool OrgPieceThere = false;
+            bool status = false;
             bool canMove = true;
-            bool OrgPieceThere = true;
-            bool status = true;
-            if ((curX + 1 == desX) || (curX - 1 == desX))
+            if (((curX + 1 == desX) || (curX - 1 == desX)) && (curY != desY))
             {
                 int count = 0;
-                int myRedCount = 0;
-                foreach (CheckerPiece myRed in RedPiece)
+                int myOrgCount = 0;
+                foreach (CheckerPiece myOrg in OrgPiece)
                 {
-                    if ((curX == myRed.XPos) && (curY == myRed.YPos))
+                    if ((curX == myOrg.XPos) && (curY == myOrg.YPos))
                     {
-                        myRedCount = count;
+                        myOrgCount = count;
                     }
-                    if ((desX == myRed.XPos) && (desY == myRed.YPos))
+                    if ((desX == myOrg.XPos) && (desY == myOrg.YPos))
                     {
                         canMove = false;
                         break;
@@ -326,9 +369,9 @@ namespace Checker
                 else
                 {
                     //check apponent pieces if it there 
-                    foreach (CheckerPiece myOrg in OrgPiece)
+                    foreach (CheckerPiece myRed in RedPiece)
                     {
-                        if ((myOrg.XPos == desX) && (myOrg.YPos == desY))
+                        if ((myRed.XPos == desX) && (myRed.YPos == desY))
                         {
                             canMove = false;
                             break;
@@ -340,15 +383,15 @@ namespace Checker
                     }
                     else
                     {
-                        RedPiece.RemoveAt(myRedCount);
-                        RedPiece.Add(new CheckerPiece(desX, desY, true, true));
-
+                        OrgPiece.RemoveAt(myOrgCount);
+                        OrgPiece.Add(new CheckerPiece(desX, desY, false, true));
+                        status = true;
                     }
                 }
             }
-
-            if (((curX + 2 == desX) || (curX - 2 == desX)) && ((curY + 2 == desY) || (curY - 2 == desY)))
+            if (((curY + 2 == desY) && ((curX + 2 == desX))) || ((curY + 2 == desY) && (curX - 2 == desX)))
             {
+                //check oppnent pieces
                 foreach (CheckerPiece CheckRedPieces in RedPiece)
                 {
                     if ((desX == CheckRedPieces.XPos) && (desY == CheckRedPieces.YPos))
@@ -392,14 +435,17 @@ namespace Checker
                         int removeAtSet2 = 0;
                         foreach (CheckerPiece redPiecesDelete in RedPiece)
                         {
-                            if ((redPiecesDelete.XPos == curX - 1) && (redPiecesDelete.YPos == curY - 1))
+
+                                if (((redPiecesDelete.XPos == curX - 1) && (redPiecesDelete.YPos == curY - 1))
+                                || ((redPiecesDelete.XPos == curX - 1) && (redPiecesDelete.YPos == curY + 1)))
                             {
                                 pos1X = redPiecesDelete.XPos;
                                 pos1Y = redPiecesDelete.YPos;
                                 statusCondition1 = false;
                                 removeAtSet1 = counterToDelete;
                             }
-                            if ((redPiecesDelete.XPos == curX + 1) && (redPiecesDelete.YPos == curY - 1))
+                            if (((redPiecesDelete.XPos == curX + 1) && (redPiecesDelete.YPos == curY - 1)) ||
+                               ((redPiecesDelete.XPos == curX + 1) && (redPiecesDelete.YPos == curY + 1)))
                             {
                                 pos2X = redPiecesDelete.XPos;
                                 pos2Y = redPiecesDelete.YPos;
@@ -434,17 +480,17 @@ namespace Checker
                                 RedPiece.RemoveAt(removeAtSet2);
                             }
                             OrgPiece.RemoveAt(deleteOrgList);
-                         
-                                OrgPiece.Add(new CheckerPiece(desX, desY, false, true));
-                         
+
+                            OrgPiece.Add(new CheckerPiece(desX, desY, false, true));
+
                             status = true;
                         }
                         else if ((statusCondition1 == false) && (statusCondition2 == true))
                         {
                             OrgPiece.RemoveAt(deleteOrgList);
-                           
-                                OrgPiece.Add(new CheckerPiece(desX, desY, false, true));
-                            
+
+                            OrgPiece.Add(new CheckerPiece(desX, desY, false, true));
+
                             RedPiece.RemoveAt(removeAtSet1);
                             status = true;
 
@@ -454,9 +500,201 @@ namespace Checker
 
                             RedPiece.RemoveAt(removeAtSet2);
                             OrgPiece.RemoveAt(deleteOrgList);
-
                             OrgPiece.Add(new CheckerPiece(desX, desY, false, true));
-                      
+
+
+                            status = true;
+                        }
+                        else
+                        {
+                            status = false;
+                        }
+
+
+                        //loop to delete
+                    }
+                }
+
+            }
+
+            //if ()
+
+
+
+
+
+
+            return status;
+        }
+        public bool moveRedKing(int curX, int curY, int desX, int desY)
+        {
+            bool RedPieceThere = false;
+            bool canMove = true;
+            bool OrgPieceThere = false;
+            bool status = false;
+
+
+
+            if (((curX + 1 == desX) || (curX - 1 == desX)) && (curY != desY))
+            {
+                int count = 0;
+                int myRedCount = 0;
+                foreach (CheckerPiece myRed in RedPiece)
+                {
+                    if ((curX == myRed.XPos) && (curY == myRed.YPos))
+                    {
+                        myRedCount = count;
+                    }
+                    if ((desX == myRed.XPos) && (desY == myRed.YPos))
+                    {
+                        canMove = false;
+                        break;
+                    }
+                    count++;
+                }
+                if (canMove == false)
+                {
+                    status = false;
+                }
+                else
+                {
+                    //check apponent pieces if it there 
+                    foreach (CheckerPiece myOrg in OrgPiece)
+                    {
+                        if ((myOrg.XPos == desX) && (myOrg.YPos == desY))
+                        {
+                            canMove = false;
+                            break;
+                        }
+                    }
+                    if (canMove == false)
+                    {
+                        status = false;
+                    }
+                    else
+                    {
+                        RedPiece.RemoveAt(myRedCount);
+                        RedPiece.Add(new CheckerPiece(desX, desY, true, true));
+                        status = true;
+                    }
+                }
+            }
+
+            if (((curX + 2 == desX) || (curX - 2 == desX)) && ((curY + 2 == desY) || (curY - 2 == desY)))
+            {
+                //check oppnent pieces
+                foreach (CheckerPiece CheckOrgPieces in OrgPiece)
+                {
+                    if ((desX == CheckOrgPieces.XPos) && (desY == CheckOrgPieces.YPos))
+                    {
+                        OrgPieceThere = true;
+                        break;
+                    }
+                }
+                if (OrgPieceThere == true)
+                {
+                    status = false;
+                }
+                else
+                {
+                    //check your pieces if it interfear
+                    foreach (CheckerPiece CheckRedPieces in RedPiece)
+                    {
+                        if ((desX == CheckRedPieces.XPos) && (desY == CheckRedPieces.YPos))
+                        {
+                            RedPieceThere = true;
+                            break;
+                        }
+
+                    }
+
+                    //change status
+                    if (RedPieceThere == true)
+                    {
+                        status = false;
+                    }
+                    else
+                    {
+                        int pos1X = 0;
+                        int pos1Y = 0;
+                        int pos2X = 0;
+                        int pos2Y = 0;
+                        bool statusCondition1 = true;
+                        bool statusCondition2 = true;
+                        int counterToDelete = 0;
+                        int removeAtSet1 = 0;
+                        int removeAtSet2 = 0;
+                        foreach (CheckerPiece orgPiecesDelete in OrgPiece)
+                        {
+                            if (((orgPiecesDelete.XPos == curX + 1) && (orgPiecesDelete.YPos == curY + 1))
+                            || ((orgPiecesDelete.XPos == curX - 1) && (orgPiecesDelete.YPos == curY + 1)))
+                            {
+                                pos1X = orgPiecesDelete.XPos;
+                                pos1Y = orgPiecesDelete.YPos;
+                                statusCondition1 = false;
+                                removeAtSet1 = counterToDelete;
+                            }
+                            if (((orgPiecesDelete.XPos == curX - 1) && (orgPiecesDelete.YPos == curY - 1)) ||
+                               ((orgPiecesDelete.XPos == curX + 1) && (orgPiecesDelete.YPos == curY + 1)))
+
+                            {
+                                pos2X = orgPiecesDelete.XPos;
+                                pos2Y = orgPiecesDelete.YPos;
+                                statusCondition2 = false;
+                                removeAtSet2 = counterToDelete;
+                            }
+                            counterToDelete++;
+                        }
+                        int deleteOrgList = 0;
+                        foreach (CheckerPiece OrgPiecesDelete in RedPiece)
+                        {
+                            if ((OrgPiecesDelete.XPos == curX) && (OrgPiecesDelete.YPos == curY))
+                            {
+                                break;
+                            }
+                            deleteOrgList++;
+                        }
+
+
+
+                        if ((statusCondition1 == false) && (statusCondition2 == false))
+                        {
+                            if (pos1X - 1 == desX)
+                            {
+                                OrgPiece.RemoveAt(removeAtSet1);
+                            }
+                            else
+                            {
+                                OrgPiece.RemoveAt(removeAtSet2);
+                            }
+                            RedPiece.RemoveAt(deleteOrgList);
+                            if (desX == 8)
+                            {
+                                RedPiece.Add(new CheckerPiece(desX, desY, true, true));
+                            }
+                            else
+                            {
+                                RedPiece.Add(new CheckerPiece(desX, desY, true, false));
+                            }
+                            status = true;
+                        }
+                        else if ((statusCondition1 == false) && (statusCondition2 == true))
+                        {
+                            OrgPiece.RemoveAt(removeAtSet1);
+                            RedPiece.RemoveAt(deleteOrgList);
+
+                            RedPiece.Add(new CheckerPiece(desX, desY, true, true));
+
+                            status = true;
+
+                        }
+                        else if ((statusCondition1 == true) && (statusCondition2 == false))
+                        {
+
+                            OrgPiece.RemoveAt(removeAtSet2);
+                            RedPiece.RemoveAt(deleteOrgList);
+
+                            RedPiece.Add(new CheckerPiece(desX, desY, true, true));
 
                             status = true;
                         }
@@ -466,9 +704,12 @@ namespace Checker
                         }
                     }
                 }
+
             }
-           return status; 
+            return status;
         }
+
+
 
 
 
@@ -499,7 +740,7 @@ namespace Checker
                 else
                 {
                     bool statusOrgKing = true;
-                    //bool StatusOrgKing = moveOrgKing(curX, curY, desX, desY);
+                    statusOrgKing = moveOrgKing(curX, curY, desX, desY);
                     if (statusOrgKing == true)
                     {
                         status = true;
